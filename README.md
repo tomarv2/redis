@@ -1,9 +1,11 @@
-##Redis
+**Redis**
 
 Redis standalone with prometheus reporting.
 
+***
 redis prometheus exporter: https://github.com/oliver006/redis_exporter
 
+***
 **To create master and slaves**
 
     kubectl exec -n sharedservices -it redis-cluster-0 -- redis-trib create --replicas 1 \
