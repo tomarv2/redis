@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-config
+  namespace: sharedservices
+  labels:
+    app: redis-cluster
+data:
+  redis.conf: |+
+    port 6379
+    cluster-enabled yes
+    cluster-config-file /data/nodes.conf
+    cluster-node-timeout 15000
+    cluster-require-full-coverage no
+    appendonly yes
+    appendfilename appendonly.aof
+    dbfilename dump.rdb
+    logfile /data/redis.log
+    protected-mode no
+    cluster-migration-barrier 1
+    rename-command FLUSHDB ""
+    rename-command FLUSHALL ""
+    rename-command PEXPIRE ""
+    rename-command CONFIG ""
+    rename-command SHUTDOWN ""
+    rename-command BGREWRITEAOF ""
+    rename-command BGSAVE ""
+    rename-command SAVE ""
+    rename-command SPOP ""
+    rename-command SREM ""
+    rename-command RENAME ""
+    rename-command DEBUG ""
+#FLUSHDB, FLUSHALL, PEXPIRE, CONFIG, SHUTDOWN, BGREWRITEAOF, BGSAVE, SAVE, SPOP, SREM, RENAME and DEBUG.

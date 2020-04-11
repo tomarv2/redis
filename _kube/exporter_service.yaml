@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-exporter
+  labels:
+    name: demo-exporter
+  namespace: sharedservices
+spec:
+  ports:
+    - name: exporter
+      port: 9121
+      targetPort: 9121
+  selector:
+    app: "demo-exporter"

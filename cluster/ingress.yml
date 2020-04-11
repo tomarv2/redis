@@ -1,0 +1,16 @@
+# Ingress
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: redis-cluster
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: redis-cluster.services.demo.com
+    http:
+      paths:
+      - backend:
+          serviceName: redis-cluster
+          servicePort: 6379

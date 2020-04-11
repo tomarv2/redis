@@ -1,0 +1,11 @@
+{
+  "kind": "ConfigMap",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "demo-redis-config",
+    "namespace": "services"
+  },
+  "data": {
+    "redis-config": "maxmemory 20mb\nmaxmemory-policy allkeys-lru\n"
+  }
+}
