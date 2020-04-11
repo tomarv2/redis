@@ -45,4 +45,4 @@ redis prometheus exporter: https://github.com/oliver006/redis_exporter
     kubectl exec redis-cluster-0 -- redis-trib rebalance --use-empty-masters \
     $(kubectl get pod redis-cluster-0 -o jsonpath='{.status.podIP}'):6379
 
-#######
+***
